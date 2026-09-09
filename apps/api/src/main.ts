@@ -38,14 +38,14 @@ async function bootstrap(): Promise<void> {
     exposedHeaders: ["Content-Disposition"]
   });
 
-  app.enableShutdownHooks();
+app.enableShutdownHooks();
 
-  await app.listen(config.PORT, "0.0.0.0");
+await app.listen(config.PORT, "0.0.0.0");
 
-  Logger.log(
-    `API listening on port ${config.PORT}`,
-    "Bootstrap"
-  );
+Logger.log(
+  `API listening on port ${config.PORT}`,
+  "Bootstrap"
+);
 }
 
 void bootstrap();
