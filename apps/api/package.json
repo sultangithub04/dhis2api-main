@@ -1,0 +1,34 @@
+{
+  "name": "@dhis-sync/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@dhis-sync/contracts": "workspace:*",
+    "@dhis-sync/dhis2-client": "workspace:*",
+    "@nestjs/common": "12.0.1",
+    "@nestjs/core": "12.0.1",
+    "@nestjs/platform-fastify": "12.0.1",
+    "dotenv": "17.3.1",
+    "fastify": "5.8.2",
+    "pg": "8.23.0",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "25.5.0",
+    "@types/pg": "8.20.0",
+    "tsx": "4.21.0",
+    "typescript": "7.0.2",
+    "vitest": "4.0.18"
+  }
+}
+

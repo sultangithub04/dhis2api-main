@@ -1,0 +1,17 @@
+{
+  "name": "dhis2-interoperability-platform",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "dev:api": "pnpm --filter @dhis-sync/api dev",
+    "dev:web": "pnpm --filter @dhis-sync/web dev",
+    "dev:worker": "pnpm --filter @dhis-sync/worker dev"
+  }
+}

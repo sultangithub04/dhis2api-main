@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: dhis_sync
+      POSTGRES_USER: dhis_sync
+      POSTGRES_PASSWORD: dhis_sync
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - dhis_sync_postgres:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dhis_sync -d dhis_sync"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
+    volumes:
+      - dhis_sync_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  dhis_sync_postgres:
+  dhis_sync_redis:
