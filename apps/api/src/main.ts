@@ -43,7 +43,7 @@ async function bootstrap(): Promise<void> {
   await app.listen(config.PORT, "0.0.0.0");
 
   Logger.log(
-    `API listening on http://localhost:${config.PORT}/api/v1`,
+    `API listening on port ${config.PORT}`,
     "Bootstrap"
   );
 }
