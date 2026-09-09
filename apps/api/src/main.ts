@@ -27,8 +27,8 @@ async function bootstrap(): Promise<void> {
     exposedHeaders: ["Content-Disposition"]
   });
   app.enableShutdownHooks();
-  await app.listen(config.API_PORT, "0.0.0.0");
-  Logger.log(`API listening on http://localhost:${config.API_PORT}/api/v1`, "Bootstrap");
+await app.listen(config.PORT, "0.0.0.0");
+  Logger.log(`API listening on http://localhost:${config.PORT}/api/v1`, "Bootstrap");
 }
 
 void bootstrap();
