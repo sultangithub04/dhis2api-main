@@ -17,9 +17,11 @@ COPY apps/api apps/api
 COPY packages packages
 
 RUN pnpm --filter @dhis-sync/contracts build
+
 RUN pnpm --filter @dhis-sync/dhis2-client build
+
 RUN pnpm --filter @dhis-sync/api build
 
 EXPOSE 4000
 
-CMD ["pnpm", "--filter", "@dhis-sync/api", "start"]
+CMD ["node", "apps/api/dist/main.js"]
