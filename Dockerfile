@@ -23,7 +23,3 @@ RUN pnpm --filter @dhis-sync/api build
 EXPOSE 4000
 
 CMD ["node", "apps/api/dist/main.js"]
-
-
-
-
